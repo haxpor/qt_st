@@ -6,6 +6,8 @@
 #include <QPropertyAnimation>
 #include <QDebug>
 
+#include "HelpDialog.h"
+
 Dialog::Dialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Dialog)
@@ -91,4 +93,38 @@ void Dialog::stateChanged()
     qDebug() << "state changed from origin state " << stateStr.c_str();
     // update to status label
     ui->stateStatus->setText(stateStr.c_str());
+}
+
+void Dialog::on_pushButton_clicked()
+{
+    // if no HelpDialog is previously created yet, thus it's not shown yet
+    // we will need to show then
+    if (!helpDialog)
+    {
+        // show dialog from HelpDialog.ui
+        helpDialog = new HelpDialog(this);
+
+        // connect signal of HelpDialog to this class's slot
+        // in order to disconnect any existing signal/slot previously created, then destroy such pointer
+        connect(helpDialog, SIGNAL(finished(int)), this, SLOT(onHelpDialogFinished(int)));
+
+        helpDialog->exec();
+    }
+}
+
+void Dialog::onHelpDialogFinished(int result)
+{
+    // ignore the input values because even with Rejected result code, it can be happened due to user call finished() with Rejected result code
+    // double check if HelpDialog is still existing
+    if (helpDialog)
+    {
+        // disconnect signal/slot
+        disconnect(sender(), SIGNAL(finished(int)), this, SLOT(onHelpDialogFinished(int)));
+
+        // properly clean the memory usage
+        delete helpDialog;
+        helpDialog = nullptr;
+
+        qDebug() << "Cleanly destroyed previous HelpDialog\n";
+    }
 }

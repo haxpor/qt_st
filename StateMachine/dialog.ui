@@ -17,7 +17,7 @@
    <property name="geometry">
     <rect>
      <x>40</x>
-     <y>250</y>
+     <y>230</y>
      <width>141</width>
      <height>23</height>
     </rect>
@@ -42,8 +42,8 @@
   <widget class="QPushButton" name="stateChangeSpecialButton">
    <property name="geometry">
     <rect>
-     <x>220</x>
-     <y>250</y>
+     <x>210</x>
+     <y>230</y>
      <width>141</width>
      <height>23</height>
     </rect>
@@ -66,6 +66,19 @@
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>260</y>
+     <width>89</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>See Author</string>
    </property>
   </widget>
  </widget>
