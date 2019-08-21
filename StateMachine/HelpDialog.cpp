@@ -19,7 +19,7 @@ HelpDialog::HelpDialog(QWidget *parent) :
     const int imageContainerHeight = ui->image->height();
     qDebug() << "width: " << imageContainerWidth << "\nheight: " << imageContainerHeight;
     const QPixmap *p = ui->image->pixmap();
-    ui->image->setPixmap(p->scaled(imageContainerWidth, imageContainerHeight, Qt::AspectRatioMode::KeepAspectRatio));
+    ui->image->setPixmap(p->scaled(imageContainerWidth, imageContainerHeight, Qt::AspectRatioMode::KeepAspectRatioByExpanding));
 }
 
 HelpDialog::~HelpDialog()
