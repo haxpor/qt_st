@@ -2,5 +2,7 @@
     <qresource prefix="/">
         <file>res/hellotr_la.qm</file>
         <file>res/hellotr_la.ts</file>
+        <file>res/hellotr_zh_CN.qm</file>
+        <file>res/hellotr_zh_CN.ts</file>
     </qresource>
 </RCC>

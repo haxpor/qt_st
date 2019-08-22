@@ -10,7 +10,8 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = Localization
 TEMPLATE = app
-TRANSLATIONS += res/hellotr_la.ts
+TRANSLATIONS += res/hellotr_la.ts \
+                res/hellotr_zh_CN.ts
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which has been marked as deprecated (the exact warnings

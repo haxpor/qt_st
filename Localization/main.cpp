@@ -9,6 +9,9 @@ int main(int argc, char *argv[])
 
     QTranslator translator;
 
+    // show the current system's locale
+    qDebug() << QLocale::system().name();
+
     // only way to show translated text on UI is to put all those .qm files into resource file
     // then load it like this :/myfile.qm, or :/dir1/dir2/myfile.qm
     // the process of putting translation into qt project is as follows
@@ -18,7 +21,7 @@ int main(int argc, char *argv[])
     // 3. add relevant code to create QTranslator and load translator file like you see in this file; at main.cpp.
     // 4. use qt linguist to edit translations. Run it via `linguist <ts-file>` or just open it with `linguist` then use GUI to open a desire file
     // 5. execute `lrelease-pro <profile-file>` to generate corresponding .qm files
-    bool result = translator.load(":/res/hellotr_la.qm");
+    bool result = translator.load(":/res/hellotr_zh_CN.qm");
     if (result)
     {
         qDebug() << "Loaded .ts ok";
