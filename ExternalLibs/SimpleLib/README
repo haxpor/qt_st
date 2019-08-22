@@ -1,0 +1,4 @@
+There is no installation command in CMake.
+Just copy the output shared library file as generated.
+
+SimpleLib is meant to be used for ExternalLibrary demo, and its cmake build directory should be named "build" exactly otherwise ExternalLibrary project won't be able to see it.
