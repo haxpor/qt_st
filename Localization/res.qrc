@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>res/hellotr_la.qm</file>
+        <file>res/hellotr_la.ts</file>
+    </qresource>
+</RCC>
